@@ -1,0 +1,254 @@
+:root {
+  color-scheme: light;
+  --nk-ink: #14213d;
+  --nk-muted: #64748b;
+  --nk-line: #d9e2ec;
+  --nk-surface: #f7f9fb;
+  --nk-panel: #ffffff;
+  --nk-brand: #0f766e;
+  --nk-brand-dark: #115e59;
+  --nk-accent: #b45309;
+  --nk-danger: #b42318;
+  --nk-info: #2563eb;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: var(--nk-surface);
+  color: var(--nk-ink);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
+}
+
+a {
+  color: var(--nk-brand-dark);
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.app-main {
+  width: min(1180px, calc(100% - 24px));
+  margin: 0 auto;
+  padding: 24px 0 56px;
+}
+
+.navbar {
+  border-bottom: 1px solid var(--nk-line);
+}
+
+.brand-mark {
+  display: inline-grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  background: var(--nk-brand);
+  color: white;
+  font-weight: 800;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.page-title {
+  margin: 0;
+  font-size: clamp(1.45rem, 1.2rem + 0.9vw, 2.05rem);
+  line-height: 1.1;
+  letter-spacing: 0;
+}
+
+.page-kicker {
+  margin: 4px 0 0;
+  color: var(--nk-muted);
+}
+
+.panel {
+  background: var(--nk-panel);
+  border: 1px solid var(--nk-line);
+  border-radius: 8px;
+  padding: 18px;
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(145px, 1fr));
+  gap: 10px;
+}
+
+.metric {
+  border: 1px solid var(--nk-line);
+  border-radius: 8px;
+  padding: 12px;
+  background: #fff;
+}
+
+.metric-label {
+  color: var(--nk-muted);
+  font-size: 0.82rem;
+}
+
+.metric-value {
+  font-size: 1.35rem;
+  font-weight: 750;
+}
+
+.table {
+  vertical-align: middle;
+}
+
+.table-responsive {
+  border: 1px solid var(--nk-line);
+  border-radius: 8px;
+  background: white;
+}
+
+.form-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--nk-brand);
+  --bs-btn-border-color: var(--nk-brand);
+  --bs-btn-hover-bg: var(--nk-brand-dark);
+  --bs-btn-hover-border-color: var(--nk-brand-dark);
+}
+
+.btn-outline-primary {
+  --bs-btn-color: var(--nk-brand-dark);
+  --bs-btn-border-color: var(--nk-brand);
+  --bs-btn-hover-bg: var(--nk-brand);
+  --bs-btn-hover-border-color: var(--nk-brand);
+}
+
+.badge.text-bg-open {
+  color: #053b36;
+  background: #b7f4df;
+}
+
+.badge.text-bg-closed {
+  color: #4a2800;
+  background: #f7d7a5;
+}
+
+.scanner-box,
+.map-box {
+  min-height: 360px;
+  border: 1px solid var(--nk-line);
+  border-radius: 8px;
+  overflow: hidden;
+  background: white;
+}
+
+.map-marker {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 2px solid white;
+  border-radius: 50%;
+  background: var(--nk-brand);
+  color: white;
+  box-shadow: 0 2px 8px rgb(15 23 42 / 24%);
+  font-size: 0.7rem;
+  font-weight: 800;
+}
+
+.map-marker span {
+  display: block;
+  max-width: 26px;
+  overflow: hidden;
+  text-align: center;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.map-marker-selected {
+  background: var(--nk-accent);
+  box-shadow:
+    0 0 0 4px rgb(180 83 9 / 22%),
+    0 2px 8px rgb(15 23 42 / 24%);
+}
+
+.qr-sheet {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+}
+
+.qr-card {
+  break-inside: avoid;
+  border: 1px solid #111827;
+  border-radius: 8px;
+  padding: 10px;
+  text-align: center;
+  background: white;
+}
+
+.qr-card img {
+  width: 132px;
+  height: 132px;
+}
+
+@media (max-width: 720px) {
+  .app-main {
+    width: min(100% - 16px, 1180px);
+    padding-top: 14px;
+  }
+
+  .page-header,
+  .toolbar {
+    display: block;
+  }
+
+  .actions {
+    margin-top: 10px;
+  }
+
+  .panel {
+    padding: 14px;
+  }
+}
+
+@media print {
+  .navbar,
+  .no-print,
+  .page-header .actions {
+    display: none !important;
+  }
+
+  .app-main {
+    width: 100%;
+    padding: 0;
+  }
+
+  body {
+    background: white;
+  }
+}
